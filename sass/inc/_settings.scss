@@ -1,0 +1,45 @@
+@charset 'UTF-8';
+
+
+
+//====================================
+//  Layout Settings
+//====================================
+
+//
+//  Color Setings
+//____________________________________
+
+$main-color:#fff;
+$sub-color:#FFD8D8;
+$accent-color:#53BCAC;
+$light-color:#FFFBA0;
+$twitter-color:#1D95E0;
+
+//
+//  Fonts Setings
+//____________________________________
+
+$font-primary: '游ゴシック' , 'Yu Gothic' , '游ゴシック体' , 'YuGothic' , 'ヒラギノ角ゴ Pro W3' , 'Hiragino Kaku Gothic Pro' , 'Meiryo UI' , 'メイリオ' , Meiryo , sans-serif;
+
+$base-font-size: 16px;
+
+
+//
+//  Media Queries
+//____________________________________
+$tab: 768px;
+$pc: 1024px;
+
+
+@mixin tab {
+    @media screen and (min-width: ($tab)) {  
+      @content;
+    }
+  }
+  
+  @mixin pc {
+    @media screen and (min-width: ($pc)) {
+      @content;
+    }
+  }
