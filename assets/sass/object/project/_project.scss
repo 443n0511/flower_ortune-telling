@@ -11,6 +11,9 @@ Button
     &:hover {
       background-color:lighten($accent-color, 10%);
     }
+    &:disabled{
+        background-color:$dark-color;
+    }
  }
 
  /**********

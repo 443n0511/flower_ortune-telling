@@ -197,6 +197,10 @@ Button
   background-color: #78cabe;
 }
 
+.p-button__primary:disabled {
+  background-color: #e0e0e0;
+}
+
 /**********
 List
 **********/
