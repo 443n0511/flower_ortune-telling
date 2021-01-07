@@ -35,7 +35,7 @@ html {
 body {
  height: 100%;
  background-color: $main-color;
- color: $sub-color;
+ color: $primary-color;
 
  
 
@@ -75,7 +75,7 @@ li{
 }
 a {
   text-decoration: none;
-  color: lightGray-color;
+  color:inherit;
  -webkit-transition: all .3s ease-in-out;
          transition: all .3s ease-in-out;
 }

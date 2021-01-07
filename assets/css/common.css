@@ -78,7 +78,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
-  font: medium/1.5 "Montserrat", "Noto Sans Japanese", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, sans-serif;
+  font: medium/1.5 "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, sans-serif;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -107,7 +107,7 @@ img {
 body {
   height: 100%;
   background-color: #fff;
-  color: #50402e;
+  color: #333;
 }
 
 body.is-active-drawer {
@@ -143,7 +143,7 @@ li {
 
 a {
   text-decoration: none;
-  color: lightGray-color;
+  color: inherit;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
@@ -159,13 +159,53 @@ a {
 /* =================================================
 Layout レイアウト用
 ==================================================== */
+/* Centering */
+.l-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /* =================================================
  Object オブジェクト用
 ==================================================== */
 /*
 Component 何度も使うコンポーネント用
 -----------------------------------------------------*/
+/* Button */
+.c-button {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
 /*
   Project プロジェクト用
 -----------------------------------------------------*/
+/**********
+Button
+**********/
+.p-button__primary {
+  color: #fff;
+  background-color: #53BCAC;
+  padding: 1.5em;
+  margin: 1.5em auto;
+}
+
+.p-button__primary:hover {
+  background-color: #78cabe;
+}
+
+/**********
+List
+**********/
+.p-list-box {
+  text-align: center;
+}
+
+.red {
+  background-color: red;
+  /*   背景が赤 */
+}
 /*# sourceMappingURL=common.css.map */
