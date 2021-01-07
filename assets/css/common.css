@@ -186,19 +186,54 @@ Component 何度も使うコンポーネント用
 /**********
 Button
 **********/
-.p-button__primary {
-  color: #fff;
-  background-color: #53BCAC;
-  padding: 1.5em;
-  margin: 1.5em auto;
+.p-button-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  margin: 30px auto;
 }
 
-.p-button__primary:hover {
+.p-button {
+  padding: 1.5em;
+  margin: 1.5em auto;
+  border-radius: 50px;
+}
+
+.p-button.__reload {
+  color: #fff;
+  background-color: #4d4d4d;
+  border-bottom: solid 4px #333;
+}
+
+.p-button.__reload:hover {
+  background-color: #666666;
+}
+
+.p-button.__reload:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  border-bottom: none;
+}
+
+.p-button.__primary {
+  color: #fff;
+  background-color: #53BCAC;
+  border-bottom: solid 4px #333;
+}
+
+.p-button.__primary:hover {
   background-color: #78cabe;
 }
 
-.p-button__primary:disabled {
+.p-button.__primary:disabled {
   background-color: #e0e0e0;
+}
+
+.p-button.__primary:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  border-bottom: none;
 }
 
 /**********
@@ -208,8 +243,34 @@ List
   text-align: center;
 }
 
-.red {
-  background-color: red;
-  /*   背景が赤 */
+.p-list {
+  background-color: #FFD8D8;
+  padding: .5em 0;
+  margin: .5em;
+}
+
+.fadeout {
+  -webkit-animation: fadeOut 1s;
+          animation: fadeOut 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=common.css.map */

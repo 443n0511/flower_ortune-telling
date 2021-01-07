@@ -1,20 +1,48 @@
 /**********
 Button
 **********/
+.p-button-box{
+  display: flex;
+  width: 50%;
+  margin: 30px auto;
+}
 
-.p-button__primary {
+.p-button{
+  padding:(24/16)+em ;
+  margin:(24/16)+em  auto;
+  border-radius: 50px;
+
+ 
+
+  &.__reload{
+    color:$main-color;
+    background-color:lighten($primary-color, 10%);
+    border-bottom: solid 4px $primary-color;
+    &:hover {
+      background-color:lighten($primary-color, 20%);
+    }
+    &:active {
+      transform: translateY(4px);
+      border-bottom: none;
+    }
+ }
+  &.__primary {
     color:$main-color;
     background-color:$accent-color;
-   padding:(24/16)+em ;
-   margin:(24/16)+em  auto;
-
+    border-bottom: solid 4px $primary-color;
     &:hover {
       background-color:lighten($accent-color, 10%);
     }
     &:disabled{
         background-color:$dark-color;
     }
+    &:active {
+      transform: translateY(4px);
+      border-bottom: none;
+    }
  }
+
+}
 
  /**********
 List
@@ -25,7 +53,21 @@ List
     text-align: center;
 }
 
-.red{
-    background-color: red;
-  /*   背景が赤 */
+.p-list{
+  background-color: $sub-color;
+  padding:.5em 0;
+  margin:.5em;
+}
+
+.fadeout {
+  animation : fadeOut 1s;
+  animation-fill-mode: both;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
   }
+  100% {
+    opacity: 0;
+  }
+}
