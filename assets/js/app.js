@@ -16,9 +16,10 @@ function newAdd() {
     // divをランダムの数用意する為のループ
     for (let i = 0; i < getRandom; i++) {
         const add = document.createElement('li'); // div 用意
-        add.id = 'hanabira' + i; // 花びらの id
+        add.id = 'hanabira' + (i+1); // １から始まる花びらの idを追加
         add.textContent = "これは追加した" + (i + 1) + "個目のli"
         parent.appendChild(add);//parentの中の末尾にaddを挿入
+        
     }
 }
 
@@ -31,7 +32,7 @@ document.getElementById("js-button").onclick = function () {
     let setId = document.getElementById('hanabira' + getId);//花びらのidをセット
 
    // ランダムで取得した数と同じ数だけボタンを押せるようにする
-    if (getId < getRandom) {
+    if (getId <= getRandom) {
         document.getElementById("js-button").removeAttribute("disabled");
         getId++;
         console.log(setId);
