@@ -1,4 +1,3 @@
-// 包括的に 2 つの値の間のランダムな整数を得る
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -21,6 +20,8 @@ function newAdd() {
         add.classList.add('p-list');//花びらのclassもセット
         parent.appendChild(add);//parentの中の末尾にaddを挿入
 
+
+
     }
 }
 
@@ -30,28 +31,57 @@ newAdd();
 //花びらを消すボタン
 
 let getId = 0;//花びらのidの初期化
+const result = document.createElement('p'); // 結果出力用のpを用意
+const resultParent = document.getElementById("js-result");
+result.id = 'result_text'; // 結果出力用idを追加
+result.classList.add('p-result-box','__text');//結果出力用classもセット
+
 document.getElementById("js-button-primary").onclick = function () {
 
     let setId = document.getElementById('hanabira' + getId);//花びらのidをセット
+    resultParent.insertBefore(result, resultParent.lastChild);
 
     // ランダムで取得した数と同じ数だけボタンを押せるようにする
-    if (getId < (getRandom -1)) {
+    if (getId < (getRandom - 1)) {
         document.getElementById("js-button-primary").removeAttribute("disabled");
         getId++;
         setId.classList.add('fadeout');
         setTimeout(function () {
             setId.style.display = "none";
-        },1000);
+        }, 1000);
+
+        //結果出力
+        if (getId % 2 == 0) {
+            result.textContent = "スキ"
+        } else {
+            result.textContent = "キライ"
+        }
+
+
+
     } else {
         // disabled属性を設定
         document.getElementById("js-button-primary").setAttribute("disabled", true);
         setId.classList.add('fadeout');
+        getId++;
         setTimeout(function () {
             setId.style.display = "none";
-        },1000);
-    }
-};
+        }, 1000);
 
+        //結果出力
+        if (getId % 2 == 0) {
+            result.textContent = "結果：スキ！";
+            document.getElementById('js-resultText').innerText = 'おめでとうございます！';
+
+        } else {
+            result.textContent = "結果：キライとは限らない";
+            document.getElementById('js-resultText').innerText = 'どんまい';
+
+        }
+
+    }
+
+};
 
 //リロードボタン
 

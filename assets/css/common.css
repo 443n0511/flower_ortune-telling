@@ -273,4 +273,12 @@ List
     opacity: 0;
   }
 }
+
+/**********
+Result
+**********/
+.p-result-box.__text {
+  text-align: center;
+  font-size: 2em;
+}
 /*# sourceMappingURL=common.css.map */
