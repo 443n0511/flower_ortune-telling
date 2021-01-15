@@ -62,7 +62,7 @@ List
       content:"";
       width: 130px;
       height: 130px;
-      background-color:#FFFBA0;
+      background-color:$light-color;
       border-radius:100px;
       top:0;
       bottom:0;
@@ -79,7 +79,7 @@ List
   top: 40%;
   left: 40%;
   position: absolute;
-  background-color:#FFD8D8;
+  background-color:$sub-color;
   padding:50px 50px;
   border-radius:50px 50px 40px 40px;
   font-size: 1em;
@@ -93,7 +93,7 @@ List
     left: 10%;
     margin-left: 0px;
     border: 40px solid transparent;
-    border-top: 50px solid #FFD8D8;
+    border-top: 50px solid $sub-color;
   }
 }
 
