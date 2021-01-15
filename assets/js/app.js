@@ -4,8 +4,8 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const getRandom = getRandomIntInclusive(5, 10);
-
+const getRandom = getRandomIntInclusive(10, 20);
+let getDeg = 0;
 // 花びらをランダムの数表示する関数
 function newAdd() {
     const parent = document.getElementById("js-parent");
@@ -14,14 +14,15 @@ function newAdd() {
 
     // divをランダムの数用意する為のループ
     for (let i = 0; i < getRandom; i++) {
-        const add = document.createElement('li'); // div 用意
+        const add = document.createElement('li'); // li用意
         add.id = 'hanabira' + (i); // １から始まる花びらの idを追加
-        add.textContent = "これは" + (i + 1) + "枚目のはなびら"
+        // add.textContent = "これは" + (i + 1) + "枚目のはなびら"
         add.classList.add('p-list');//花びらのclassもセット
         parent.appendChild(add);//parentの中の末尾にaddを挿入
-
-
-
+        let setDeg = 360 / getRandom ;
+        getDeg = setDeg + getDeg;
+        add.setAttribute("style", "transform:rotate("+getDeg+"deg)translateY(-100px);");
+        console.log(add);
     }
 }
 
@@ -35,6 +36,7 @@ const result = document.createElement('p'); // 結果出力用のpを用意
 const resultParent = document.getElementById("js-result");
 result.id = 'result_text'; // 結果出力用idを追加
 result.classList.add('p-result-box','__text');//結果出力用classもセット
+
 
 document.getElementById("js-button-primary").onclick = function () {
 
@@ -52,9 +54,9 @@ document.getElementById("js-button-primary").onclick = function () {
 
         //結果出力
         if (getId % 2 == 0) {
-            result.textContent = "スキ"
+            document.getElementById('js-resultText').innerText = 'スキ！';
         } else {
-            result.textContent = "キライ"
+            document.getElementById('js-resultText').innerText = 'キライ';
         }
 
 
@@ -70,12 +72,13 @@ document.getElementById("js-button-primary").onclick = function () {
 
         //結果出力
         if (getId % 2 == 0) {
-            result.textContent = "結果：スキ！";
-            document.getElementById('js-resultText').innerText = 'おめでとうございます！';
+            result.innerHTML = '<img src="assets/images/smile.png" alt="うれしいきもち">';
+            document.getElementById('js-resultText').innerText = '結果：スキ！おめでとうございます！';
+            
 
         } else {
-            result.textContent = "結果：キライとは限らない";
-            document.getElementById('js-resultText').innerText = 'どんまい';
+            result.innerHTML =  '<img src="assets/images/sad.png" alt="かなしいきもち">';
+            document.getElementById('js-resultText').innerText = '結果：キライ…どんまい！';
 
         }
 
@@ -88,4 +91,9 @@ document.getElementById("js-button-primary").onclick = function () {
 document.getElementById("js-button-reload").onclick = function () {
     location.reload();
 };
+
+
+
+
+    
 
