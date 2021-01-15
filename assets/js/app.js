@@ -21,7 +21,7 @@ function newAdd() {
         parent.appendChild(add);//parentの中の末尾にaddを挿入
         let setDeg = 360 / getRandom ;
         getDeg = setDeg + getDeg;
-        add.setAttribute("style", "transform:rotate("+getDeg+"deg)translateY(-100px);");
+        add.setAttribute("style", "transform:rotate("+getDeg+"deg)translateY(-120%);");
         console.log(add);
     }
 }
