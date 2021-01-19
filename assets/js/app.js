@@ -1,32 +1,31 @@
 function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const getRandom = getRandomIntInclusive(10, 20);
-let getDeg = 0;
-// 花びらをランダムの数表示する関数
-function newAdd() {
+function createHanabira(initDeg, randomNum) { 
     const parent = document.getElementById("js-parent");
-
-    // console.log(parent);
-
-    // divをランダムの数用意する為のループ
-    for (let i = 0; i < getRandom; i++) {
-        const add = document.createElement('li'); // li用意
-        add.id = 'hanabira' + (i); // １から始まる花びらの idを追加
-        // add.textContent = "これは" + (i + 1) + "枚目のはなびら"
-        add.classList.add('p-list');//花びらのclassもセット
-        parent.appendChild(add);//parentの中の末尾にaddを挿入
-        let setDeg = 360 / getRandom ;
-        getDeg = setDeg + getDeg;
-        add.setAttribute("style", "transform:rotate("+getDeg+"deg)translateY(-120%);");
-        console.log(add);
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < randomNum; i++) { 
+        const li = document.createElement('li');
+        li.id = `hanabira${i}`;
+        li.classList.add('p-list');
+        fragment.appendChild(li);
+        let deg = 360 / randomNum ;
+        const currentDeg = deg + initDeg; 
+        li.setAttribute("style", "transform:rotate("+currentDeg+"deg)translateY(-120%);");
+        initDeg = currentDeg;
     }
+    parent.appendChild(fragment);
+    
+    
 }
 
-newAdd();
+const min = 10 
+const max = 20
+const randomNum = getRandomIntInclusive(min, max);
+createHanabira(0, randomNum);
+
+
 
 
 //花びらを消すボタン
@@ -44,7 +43,7 @@ document.getElementById("js-button-primary").onclick = function () {
     resultParent.insertBefore(result, resultParent.lastChild);
 
     // ランダムで取得した数と同じ数だけボタンを押せるようにする
-    if (getId < (getRandom - 1)) {
+    if (getId < (randomNum - 1)) {
         document.getElementById("js-button-primary").removeAttribute("disabled");
         getId++;
         setId.classList.add('fadeout');
